@@ -26,7 +26,7 @@ class TenancyProvider extends ServiceProvider
     {
         if (! $this->app->runningInConsole()) {
             $host = $this->app['request']['domain'];
-            Tenant::whereDomain($host)->firstOrFail()->configure()->use(); 
+            Tenant::whereDomain($host)->first()?->configure()?->use(); 
         }
     }
 
