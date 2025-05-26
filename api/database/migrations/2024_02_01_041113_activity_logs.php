@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('activity_logs', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            // $table->string('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('domain');
             $table->string('description');
             $table->string('ip_address');
